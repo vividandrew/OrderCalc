@@ -1,0 +1,10 @@
+C:\Users\Andre\source\repos\OrderCalc\OrderCalc\bin\Debug\OrderCalc.exe.config
+C:\Users\Andre\source\repos\OrderCalc\OrderCalc\bin\Debug\OrderCalc.exe
+C:\Users\Andre\source\repos\OrderCalc\OrderCalc\bin\Debug\OrderCalc.pdb
+C:\Users\Andre\source\repos\OrderCalc\OrderCalc\obj\Debug\OrderCalc.csprojAssemblyReference.cache
+C:\Users\Andre\source\repos\OrderCalc\OrderCalc\obj\Debug\OrderCalc.frmOrder.resources
+C:\Users\Andre\source\repos\OrderCalc\OrderCalc\obj\Debug\OrderCalc.Properties.Resources.resources
+C:\Users\Andre\source\repos\OrderCalc\OrderCalc\obj\Debug\OrderCalc.csproj.GenerateResource.cache
+C:\Users\Andre\source\repos\OrderCalc\OrderCalc\obj\Debug\OrderCalc.csproj.CoreCompileInputs.cache
+C:\Users\Andre\source\repos\OrderCalc\OrderCalc\obj\Debug\OrderCalc.exe
+C:\Users\Andre\source\repos\OrderCalc\OrderCalc\obj\Debug\OrderCalc.pdb
