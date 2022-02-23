@@ -460,6 +460,7 @@ namespace OrderCalc
             this.Name = "frmOrder";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Orders Andrew Warnock 06/02/2022";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmOrder_FormClosed);
             this.Load += new System.EventHandler(this.frmOrder_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

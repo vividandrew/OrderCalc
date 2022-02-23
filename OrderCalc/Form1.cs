@@ -223,5 +223,10 @@ namespace OrderCalc
             MessageBox.Show($"Your order total comes to {orderTotal.ToString("C")}");
             Application.Exit();
         }
+
+        private void frmOrder_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            exitToolStripMenuItem.PerformClick();
+        }
     }
 }
