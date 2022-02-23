@@ -15,6 +15,7 @@ namespace OrderCalc
         int[] productID;
         string[] productDescription;
         double[] productPrice;
+        double orderTotal = 0.00;
         public frmOrder()
         {
             InitializeComponent();
@@ -53,6 +54,8 @@ namespace OrderCalc
             {
                 txtBox.Clear();
             }
+
+            setTotals();
         }
 
         private void clearToolStripMenuItem_Click(object sender, EventArgs e)
@@ -84,25 +87,28 @@ namespace OrderCalc
             return false;
         }
 
-        private void setTotals(double[] price)
+        private void setTotals(double[] price = null)
         {
             double total = 0.00;
-            foreach(double dbl in price)
+            if(price != null)
             {
-                total += dbl;
+                foreach (double dbl in price)
+                {
+                    total += dbl;
+                }
             }
+            orderTotal += total;
 
             txtOrderSubtotal.Text = total.ToString("C");
-            if(total> 5000)
+            if( orderTotal > 5000)
             {
                 txtOrderDiscount.Text = "10%";
-                total -= total * 0.1;
-                txtOrderTotal.Text = total.ToString("C");
+                txtOrderTotal.Text = (orderTotal * 0.9).ToString("C");
             }
             else
             {
                 txtOrderDiscount.Text = "0%";
-                txtOrderTotal.Text = txtOrderSubtotal.Text;
+                txtOrderTotal.Text = orderTotal.ToString("C");
             }
         }
 
@@ -120,7 +126,7 @@ namespace OrderCalc
                     txtProductID1.Text = productinfo[0];
                     txtProductDescription1.Text = productinfo[1];
                     txtProductPrice1.Text = productinfo[2];
-                    txtProductTotal1.Text = "£" + productinfo[3];
+                    txtProductTotal1.Text = double.Parse(productinfo[3]).ToString("C");
 
                     price[0] = double.Parse(productinfo[3]);
                 }
@@ -142,7 +148,7 @@ namespace OrderCalc
                     txtProductID2.Text = productinfo[0];
                     txtProductDescription2.Text = productinfo[1];
                     txtProductPrice2.Text = productinfo[2];
-                    txtProductTotal2.Text = "£" + productinfo[3];
+                    txtProductTotal2.Text = double.Parse(productinfo[3]).ToString("C");
 
                     price[1] = double.Parse(productinfo[3]);
                 }
@@ -165,7 +171,7 @@ namespace OrderCalc
                     txtProductID3.Text = productinfo[0];
                     txtProductDescription3.Text = productinfo[1];
                     txtProductPrice3.Text = productinfo[2];
-                    txtProductTotal3.Text = "£" + productinfo[3];
+                    txtProductTotal3.Text = double.Parse(productinfo[3]).ToString("C");
 
                     price[2] = double.Parse(productinfo[3]);
                 }
@@ -188,7 +194,7 @@ namespace OrderCalc
                     txtProductID4.Text = productinfo[0];
                     txtProductDescription4.Text = productinfo[1];
                     txtProductPrice4.Text = productinfo[2];
-                    txtProductTotal4.Text = "£" + productinfo[3];
+                    txtProductTotal4.Text = double.Parse(productinfo[3]).ToString("C");
 
                     price[3] = double.Parse(productinfo[3]);
                 }
@@ -213,6 +219,8 @@ namespace OrderCalc
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (orderTotal > 5000) { orderTotal *= 0.9; }
+            MessageBox.Show($"Your order total comes to {orderTotal.ToString("C")}");
             Application.Exit();
         }
     }
